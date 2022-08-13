@@ -75,13 +75,13 @@ const selectAnswer = (answer: { Ans: string, isCorrect: boolean }) => {
   width: 70px;
 }
 .correct {
-  background: #60bf88;
+  background-color: #60bf88;
   border-color: #60bf88;
   color: white;
 }
 
 .correct:hover {
-  background: #60bf88;
+  background-color: #60bf88;
 }
 
 .mt-3px {
@@ -89,13 +89,13 @@ const selectAnswer = (answer: { Ans: string, isCorrect: boolean }) => {
 }
 
 .incorrect {
-  background: #ea8282;
+  background-color: #ea8282;
   border-color: #ea8282;
   color: white;
 }
 
 .incorrect:hover {
-  background: #ea8282;
+  background-color: #ea8282;
 }
 
 .block-0>svg {

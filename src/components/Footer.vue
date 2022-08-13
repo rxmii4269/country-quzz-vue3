@@ -4,5 +4,4 @@
   </footer>
 </template>
 <script setup lang="ts">
-name: 'FooterComponent'
 </script>

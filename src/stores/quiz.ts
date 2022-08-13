@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { defineStore } from 'pinia'
-import { shuffle } from '../composables/useHelpers'
+import {defineStore} from 'pinia'
+import {shuffle} from '../composables/useHelpers'
 
 const instance = axios.create({
     baseURL: "https://restcountries.com/v3.1/"
@@ -55,7 +55,7 @@ export const quizStore = defineStore('quiz', {
             }
         },
         getAnswers(correctAns: { common: any }) {
-            let answers: Answer[] = []
+            const answers: Answer[] = [];
             answers.push({ Ans: correctAns.common, isCorrect: true })
             for (let i = 0; i < 3; i++) {
                 const rand = this.countries[Math.floor(Math.random() * 250)].name
@@ -73,15 +73,15 @@ export const quizStore = defineStore('quiz', {
             this.answers = shuffle(answers) as Answer[]
         },
         generateQuestion() {
-            let countries = this.countries
+            const countries = this.countries;
             let randNum = Math.floor(Math.random() * countries.length)
             let randomCapital = countries[randNum].capital
             if (randomCapital === "") {
                 randNum = Math.floor(Math.random() * countries.length)
                 randomCapital = countries[randNum].capital
             }
-            let randCountry = countries[randNum]
-            let question = `${randomCapital} is the capital of`
+            const randCountry = countries[randNum];
+            const question = `${randomCapital} is the capital of`;
 
             if (typeof randNum !== 'undefined') {
                 this.question = question
@@ -95,8 +95,7 @@ export const quizStore = defineStore('quiz', {
             }
         },
         generateFlagUrl(randCountry: any) {
-            let randomFlag = randCountry.flags.svg
-            this.flagUrl = randomFlag
+            this.flagUrl = randCountry.flags.svg
         }
     }
 })
